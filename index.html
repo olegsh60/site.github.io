@@ -435,7 +435,7 @@
             <h2 class="section-title">Обо мне</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Я DevOps инженер с более чем 4-летним опытом работы в крупных проектах. Моя специализация включает автоматизацию процессов, настройку инфраструктуры и создание отказоустойчивых систем.</p>
+                    <p>Я DevOps инженер с более чем 3-летним опытом работы в крупных проектах. Моя специализация включает автоматизацию процессов, настройку инфраструктуры и создание отказоустойчивых систем.</p>
                     <p>В последнее время я активно работаю с автономными AI-агентами, создавая интеллектуальные системы, способные решать сложные задачи с минимальным вмешательством человека.</p>
                     <p>Мой подход к работе основан на принципах надежности, масштабируемости и безопасности. Я стремлюсь к созданию решений, которые не только решают текущие задачи, но и учитывают возможные будущие потребности.</p>
                     <div class="skills">
@@ -551,7 +551,7 @@
             <div class="contact-content">
                 <div class="contact-info">
                     <p>Если у вас есть вопросы или вы хотите обсудить потенциальный проект, не стесняйтесь связаться со мной.</p>
-                    <p><i class="fas fa-envelope"></i> olegsh60@gmail.com</p>
+                    <p><i class="fas fa-envelope"></i> oleg.shelmanov@example.com</p>
                     <div class="social-links">
                         <a href="https://github.com/olegsh60" target="_blank"><i class="fab fa-github"></i></a>
                         <a href="https://linkedin.com/in/olegshelmanov" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -587,6 +587,88 @@
             </div>
         </div>
     </footer>
+    <!-- Наш чат -->    
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+    <style>
+        :root {
+            --chat--color-primary: #e74266;
+            --chat--color-primary-shade-50: #db4061;
+            --chat--color-primary-shade-100: #cf3c5c;
+            --chat--color-secondary: #20b69e;
+            --chat--color-secondary-shade-50: #1ca08a;
+            --chat--color-white: #ffffff;
+            --chat--color-light: #f2f4f8;
+            --chat--color-light-shade-50: #e6e9f1;
+            --chat--color-light-shade-100: #c2c5cc;
+            --chat--color-medium: #d2d4d9;
+            --chat--color-dark: #101330;
+            --chat--color-disabled: #777980;
+            --chat--color-typing: #404040;
+            --chat--spacing: 1rem;
+            --chat--border-radius: 0.25rem;
+            --chat--transition-duration: 0.15s;
+            --chat--window--width: 400px;
+            --chat--window--height: 600px;
+            --chat--header-height: auto;
+            --chat--header--padding: var(--chat--spacing);
+            --chat--header--background: var(--chat--color-dark);
+            --chat--header--color: var(--chat--color-light);
+            --chat--header--border-top: none;
+            --chat--header--border-bottom: none;
+            --chat--heading--font-size: 2em;
+            --chat--subtitle--font-size: inherit;
+            --chat--subtitle--line-height: 1.8;
+            --chat--textarea--height: 50px;
+            --chat--message--font-size: 1rem;
+            --chat--message--padding: var(--chat--spacing);
+            --chat--message--border-radius: var(--chat--border-radius);
+            --chat--message-line-height: 1.8;
+            --chat--message--bot--background: var(--chat--color-white);
+            --chat--message--bot--color: var(--chat--color-dark);
+            --chat--message--bot--border: none;
+            --chat--message--user--background: var(--chat--color-secondary);
+            --chat--message--user--color: var(--chat--color-white);
+            --chat--message--user--border: none;
+            --chat--message--pre--background: rgba(0, 0, 0, 0.05);
+            --chat--toggle--background: var(--chat--color-primary);
+            --chat--toggle--hover--background: var(--chat--color-primary-shade-50);
+            --chat--toggle--active--background: var(--chat--color-primary-shade-100);
+            --chat--toggle--color: var(--chat--color-white);
+            --chat--toggle--size: 64px;
+        }
+    </style>
+    <script type="module">
+        import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+        createChat ( { 
+            webhookUrl : 'https://primary-production-a41ac.up.railway.app/webhook/e3c8f707-9ed1-49c9-a48f-d5b78efa446f/chat' , 
+            webhookConfig : { 
+                method : 'POST' , 
+                headers : { } 
+            } , 
+            target : '#n8n-chat' , 
+            mode : 'window' , 
+            chatInputKey : 'chatInput' , 
+            chatSessionKey : 'sessionId' , 
+            metadata : { } , 
+            showWelcomeScreen : false , 
+            defaultLanguage : 'en' , 
+            initialMessages : [ 
+                'Привет! 👋' , 
+                'Я Болт. Чем я могу вам помочь сегодня?' 
+            ] , 
+            i18n : { 
+                en : { 
+                    title : 'Привет! 👋' , 
+                    subtitle : "Я консультант Болт. Начните чат. Мы здесь, чтобы помочь вам 24/7." , 
+                    footer : '' , 
+                    getStarted : 'Новый разговор' , 
+                    inputPlaceholder : 'Введите свой вопрос..' , 
+                } , 
+            } , 
+        } ) ;
+    </script>
+    <!-- Конец чата -->
 
     <script>
         // Плавная прокрутка для навигации
